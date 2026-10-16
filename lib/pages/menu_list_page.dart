@@ -6,36 +6,46 @@ class MenuListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Kantin Bu Sari - Daftar Menu'),
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-      ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                'Selamat Datang di Kantin Bu Sari!',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 8),
-              const Text(
-                'Pilih menu favoritmu di bawah ini:',
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 24),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/detail');
-                },
-                icon: const Icon(Icons.restaurant_menu),
-                label: const Text('Lihat Detail Menu'),
-              ),
-            ],
+      // appBar: AppBar(
+      //   title: const Text('Kantin Bu Sari - Daftar Menu'),
+      //   backgroundColor: Colors.deepOrange,
+      //   foregroundColor: Colors.white,
+      // ),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/foto.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(45),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const SizedBox(height: 45),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/detail');
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFFA4292C),
+                    foregroundColor: Colors.white,
+                    minimumSize: const Size(double.infinity, 50),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 24,
+                      vertical: 12,
+                    ),
+                  ),
+                  icon: const Icon(Icons.restaurant_menu, size: 32),
+                  label: const Text(
+                    'Lihat Detail Menu',
+                    style: TextStyle(fontSize: 15),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
